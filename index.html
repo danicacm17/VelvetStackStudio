@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velvet Stack Studio</title>
+  <link rel="icon" type="image/png" href="VSSFavicon.png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fira+Mono&family=Playfair+Display+SC&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --velvet-green: #1f3d30;
+      --navy: #2b2e6c;
+      --blush: #c28b8b;
+      --cream: #fcf9f4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--cream);
+      font-family: 'Playfair Display SC', serif;
+      color: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+      animation: fadeIn 1.4s ease-out both;
+    }
+
+    /* Velvet texture overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://www.transparenttextures.com/patterns/velvet.png');
+      opacity: 0.08;
+      z-index: -1;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .blurb {
+      margin-bottom: 2.5rem;
+      max-width: 400px;
+      font-size: 2rem;
+      color: var(--deep-navy);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .velvet {
+      font-family: 'Dancing Script', cursive;
+      font-size: 5rem;
+      color: var(--velvet-green);
+      margin-bottom: 0;
+    }
+
+    .stack {
+      font-family: 'Playfair Display SC', serif;
+      font-size: 4rem;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    .studio {
+      font-family: 'Playfair Display SC', serif;
+      font-size: 2rem;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+      margin-top: 0;
+      margin-bottom: 2.5rem;
+    }
+
+    .typewriter {
+      font-family: 'Fira Mono', monospace;
+      font-size: 1.05rem;
+      color: var(--blush);
+      letter-spacing: 0.05em;
+      overflow: hidden;
+      border-right: 0.12em solid var(--blush);
+      white-space: nowrap;
+      width: 0;
+      animation: typing 2.5s steps(21, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 19ch }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    @media (max-width: 500px) {
+      .velvet, .stack { font-size: 2.4rem; }
+      .studio { font-size: 1.1rem; }
+      .typewriter { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <p class="blurb">Something new is on its way. We're building it carefully with code, clarity, and a touch of velvet.</p>
+  <div class="velvet">Velvet</div>
+  <div class="stack">STACK</div>
+  <div class="studio">STUDIO</div>
+  <div class="typewriter">Pretty in Print()</div>
+</body>
+</html>
